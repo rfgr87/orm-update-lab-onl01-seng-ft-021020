@@ -51,7 +51,8 @@ class Student
   def self.find_by_name(name)
     sql = "SELECT * FROM songs WHERE name = ?"
     result = DB[:conn].execute(sql, name)[0]
-    Song.new(result[0], result[1], result[2])
+    self.new_from_db(result)
+    //Song.new(result[0], result[1], result[2])
   end
   
   
