@@ -23,7 +23,11 @@ class Student
     sql = <<-SQL
       DROP TABLE IF EXISTS students
       SQL
-      
+    DB[:conn].execute(sql)
+  end
+  
+  def save
+    
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
 
