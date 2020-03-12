@@ -49,8 +49,12 @@ class Student
   end
   
   def self.find_by_name(name)
-    sql = <<-SQL
-      SELECT * student
+    sql = "SELECT * FROM songs WHERE name = ?"
+    result = DB[:conn].execute(sql, name)[0]
+    Song.new(result[0], result[1], result[2])
+  end
+  
+  
   # Remember, you can access your database connection anywhere in this class
   #  with DB[:conn]
 
