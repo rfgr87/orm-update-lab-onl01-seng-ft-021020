@@ -21,7 +21,7 @@ class Student
   
   def self.drop_table
     sql = <<-SQL
-      DROP TABLE students
+      DROP TABLE IF EXISTS students
       SQL
       
   # Remember, you can access your database connection anywhere in this class
